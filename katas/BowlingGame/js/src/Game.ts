@@ -2,13 +2,13 @@ export class Game {
   private rolls: number[] = [];
   private currentRoll: number = 0;
 
-  public roll(numPinsHit: number) {
+  public roll(numPinsHit: number): void {
     this.rolls[this.currentRoll] = numPinsHit;
     this.currentRoll++;
   }
 
-  public calculateScore() {
-    let calculatedScore: number = 0;
+  public calculateScore(): number {
+    let calculatedScore = 0;
     let frameIndex = 0;
     for (let frame = 0; frame < 10; frame++) {
       if (this.isStrike(frameIndex)) {
@@ -26,24 +26,24 @@ export class Game {
     return calculatedScore;
   }
 
-  isSpare(frameIndex: number) {
+  isSpare(frameIndex: number): boolean {
     return (this.rolls[frameIndex] + this.rolls[frameIndex + 1]) === 10;
   }
 
-  isStrike(frameIndex: number) {
+  isStrike(frameIndex: number): boolean {
     return this.rolls[frameIndex] === 10;
   }
 
-  sumRollsInFrame(frameIndex: number) {
+  sumRollsInFrame(frameIndex: number): number {
     return this.rolls[frameIndex] + this.rolls[frameIndex + 1];
   }
 
-  calculateSpareBonus(frameIndex: number) {
+  calculateSpareBonus(frameIndex: number): number {
     const firstRollInNextFrame = this.rolls[frameIndex + 2];
     return firstRollInNextFrame;
   }
 
-  calculateStrikeBonus(frameIndex: number) {
+  calculateStrikeBonus(frameIndex: number): number {
     const firstRollAfterStrike = this.rolls[frameIndex + 1];
     const secondRollAfterStrike = this.rolls[frameIndex + 2];
 
