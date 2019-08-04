@@ -1,0 +1,17 @@
+{
+  "name": "bowling-game",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.16",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  }
+}
