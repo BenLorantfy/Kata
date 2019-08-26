@@ -1,0 +1,9 @@
+{
+  "name": "bowling-game",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "This package.json is just used for tasks/scripts",
+  "scripts": {
+    "test:watch": "fswatch -o ./src | xargs -n1 -I{} ./scripts/runTests.sh"
+  }
+}
